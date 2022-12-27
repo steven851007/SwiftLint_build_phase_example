@@ -68,4 +68,4 @@ Follow the setup defined above. All you need to change is the `swiftlint_dirs` v
 
 Xcode has a bug handling the shared xcschemes where the pre-action script is defined. When we switch branches between two branches where one has the pre-action script defined and the other doesn't, it doesn't update the changes from the new branch but keeps the old one. This can cause an error in the build logs or a build failure. Restarting Xcode and discarding the changes in the .xcodeproj file solves this issue.
 
-This issue will go away as soon as all branch has this change.
+This issue will go away as soon as all branch has the newly defined pre-action build definition.
