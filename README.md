@@ -25,7 +25,7 @@ SwiftLint is a static analysis tool for Swift code that helps developers enforce
 Xcode's input-output files feature allows you to specify which files should be used as input to a build phase and which files should be generated as output. This can be useful when running tools like SwiftLint, as it allows you to only run the build phase when certain input files have changed, rather than running it every time the project is built. This can significantly improve build times, especially for build phases that take a long time to complete.
 
 ## Project setup
-I set up SwiftLint build phases with Xcode input-output files by following these steps:
+I set up SwiftLint build phases with Xcode input-output files and custom pre-build script by following these steps:
 
 - Have SwiftLint set up as a "Build Phase" as explained in the [SwiftLint documentation.](https://github.com/realm/SwiftLint#usage)
 - Add a new pre-action build script under Edit Scheme -> Build -> Pre-actions called "Generate build phase file lists."
