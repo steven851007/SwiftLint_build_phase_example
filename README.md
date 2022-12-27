@@ -1,6 +1,6 @@
 # SwiftLint Build Phases with Xcode Input Output Files
 
-This repository contains an example project demonstrating how to set up SwiftLint build phases using Xcode's input-output files feature. This setup solves the new warning introduced in Xcode 14:
+This repository contains an example project demonstrating how to set up SwiftLint build phases using Xcode's input-output files feature by defining a pre-build action to generate the input file list for SwiftLint. This setup solves the new warning introduced in Xcode 14:
 
 `warning build: Run script build phase 'SwiftLint' will be run during every build because it does not specify any outputs. To address this warning, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.`
 
@@ -43,7 +43,7 @@ ${SOURCE_ROOT}/generate_swifttlint_filelist.sh
 - Set up the input file lists and output for every target under the build phases using the matching generated file:
 <img width="683" alt="Screenshot 2022-12-27 at 16 43 23" src="https://user-images.githubusercontent.com/1866462/209647075-5c74c6b0-bc3b-4204-9858-f8acaec58a86.png">
 
-- Hit Cmd+U in the project twice and check the build time under the Report Navigator. Hit Cntorol+option+Cmd+Enter to show the Recent build timeline and check Xcode didn't run SwiftLint when no file has changed:
+- Hit Cmd+U in the project twice and check the build time under the Report Navigator. Hit Control+Option+Cmd+Enter to show the Recent build timeline and check Xcode didn't run SwiftLint when no file has changed:
 <img width="878" alt="Screenshot 2022-12-27 at 16 51 59" src="https://user-images.githubusercontent.com/1866462/209649731-b6fa573e-2bc3-42eb-80d3-792b9c6c5c5e.png">
 
 - Add a new .swift file / change a swift file. Hit Cmd+U again, and check Xcode run SwiftLint only for the target a change occurred:
