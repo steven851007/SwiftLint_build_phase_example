@@ -1,7 +1,9 @@
 # Example Project: SwiftLint Build Phases with Xcode Input Output Files
 
 This is an example project demonstrating how to set up SwiftLint build phases using Xcode's input output files feature. This solves the new warning introduced in Xcode 14:
-"warning build: Run script build phase 'SwiftLint' will be run during every build because it does not specify any outputs. To address this warning, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase."
+
+`warning build: Run script build phase 'SwiftLint' will be run during every build because it does not specify any outputs. To address this warning, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.`
+
 Other than solving the warning, this will also improve the speed of incremental builds in Xcode.
 
 ## What is SwiftLint?
