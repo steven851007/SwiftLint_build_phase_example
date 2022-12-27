@@ -1,4 +1,4 @@
-SwiftLint Build Phases with Xcode Input Output Files
+# SwiftLint Build Phases with Xcode Input Output Files
 
 This repository contains an example project demonstrating how to set up SwiftLint build phases using Xcode's input-output files feature. This setup solves the new warning introduced in Xcode 14:
 
