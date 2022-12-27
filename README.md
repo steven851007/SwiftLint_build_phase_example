@@ -62,7 +62,7 @@ I've added comments to the script file, but here is an overview of what it is do
 
 ## How to set this up in your project
 
-Follow the setup defined above. All you need to change is the `swiftlint_dirs` variable to match your source folders and set up the correct input-output file list in your target's SwiftLint build phase. You can also change the location of the generated files.
+Follow the setup defined in the [Project setup](#project-setup). All you need to change is the `swiftlint_dirs` variable to match your source folders and set up the correct input-output file list in your target's SwiftLint build phase. You can also change the location of the generated files.
 
 ## Known issues
 
