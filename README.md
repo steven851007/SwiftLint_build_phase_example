@@ -41,6 +41,25 @@ ${SOURCE_ROOT}/generate_swifttlint_filelist.sh
 
 ## How it works
 
+Xcode needs the input file list for the SwiftLint build phase to determine when to run SwiftLint. We want to run SwiftLint every time when we change a swift file in the current target or when we add a new file to the project. Unfortunatly we can't define a folder as an input file list therefore we have to define a file list with the paths to all swift source files. Since the list of source file changes when we add, delete or rename files we need a way to dynamically generate the input file list before every build. This is exactly what the [generate_swifttlint_filelist.sh](generate_swifttlint_filelist.sh) doing, that runs as a pre-action build script.
+
+I've added comments to the script file, but here is an overview what is it doing:
+- The script compares the current git diff to the git diff from the previous build, and determines if there was any change to the swift files list eg: added, deleted or renamed
+- If there was a change since the last build, it generates the new input file list for all targets
+- If there was no change it does nothing.
+- The script generates an input file list (.xcfilelist) and ouptut file list for every target defined in the `swiftlint_dirs` variable
+- The script generates these files into the `/build/build_phases` folder which is ignored by git.
+
+## How to set up in your project
+
+Follow the set up defined above. All you need to change is the `swiftlint_dirs` variable to match your source folders, and set up the correct input output file list in your target's SwiftLint build phase. You might also want to change the location of the generated files.
+
+## Known issues
+
+Xcode has a bug handling the shared xcschemes where the pre-action script is defined. When we switch branches between two brach where one has the pre-action srcipt defined, and the other doesn't, it doesn't update the changes from the new branch but keeps the old one. This can cause an error in the build logs, or a build failure. Restarting Xcode and discarding the changes in the .xcodeproj file solves this issue.
+
+This issue goes away as soon as all branch has this change.
+
 ## Conclusion
 
 By setting up SwiftLint build phases with Xcode input output files, you can improve the build time of your project by only running the build phase when necessary. This can be especially useful for tools like SwiftLint that take a long time to complete, as it ensures that they are only run when necessary.
