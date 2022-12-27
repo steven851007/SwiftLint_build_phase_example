@@ -6,6 +6,16 @@ This repository contains an example project demonstrating how to set up SwiftLin
 
 Other than solving the warning, this will also improve the speed of incremental builds in Xcode.
 
+Table of contents
+-----------------
+
+* [What is SwiftLint?](#what-is-swiftlint)
+* [Why use Xcode input-output files?](#why-use-xcode-input-output-files)
+* [Project setup](#project-setup)
+* [How it works](#how-it-works)
+* [How to set this up in your project](#how-to-set-this-up-in-your-project)
+* [Known issues](#known-issues)
+
 ## What is SwiftLint?
 
 SwiftLint is a static analysis tool for Swift code that helps developers enforce style and conventions in their projects. It can be run as a build phase in Xcode to automatically check for linting issues as part of the build process.
@@ -14,7 +24,7 @@ SwiftLint is a static analysis tool for Swift code that helps developers enforce
 
 Xcode's input-output files feature allows you to specify which files should be used as input to a build phase and which files should be generated as output. This can be useful when running tools like SwiftLint, as it allows you to only run the build phase when certain input files have changed, rather than running it every time the project is built. This can significantly improve build times, especially for build phases that take a long time to complete.
 
-## How to set up SwiftLint build phases with Xcode input-output files
+## Project setup
 I set up SwiftLint build phases with Xcode input-output files by following these steps:
 
 - Have SwiftLint set up as a "Build Phase" as explained in the [SwiftLint documentation.](https://github.com/realm/SwiftLint#usage)
