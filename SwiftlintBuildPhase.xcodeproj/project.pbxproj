@@ -134,6 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A93204295AD9FB005ECD90 /* Build configuration list for PBXNativeTarget "SwiftlintBuildPhase" */;
 			buildPhases = (
+				87A9320D295ADAA1005ECD90 /* Swiftlint */,
 				87A931D6295AD9FA005ECD90 /* Sources */,
 				87A931D7295AD9FA005ECD90 /* Frameworks */,
 				87A931D8295AD9FA005ECD90 /* Resources */,
@@ -151,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A93207295AD9FB005ECD90 /* Build configuration list for PBXNativeTarget "SwiftlintBuildPhaseTests" */;
 			buildPhases = (
+				87A9320E295ADC57005ECD90 /* Swiftlint */,
 				87A931EC295AD9FB005ECD90 /* Sources */,
 				87A931ED295AD9FB005ECD90 /* Frameworks */,
 				87A931EE295AD9FB005ECD90 /* Resources */,
@@ -169,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A9320A295AD9FB005ECD90 /* Build configuration list for PBXNativeTarget "SwiftlintBuildPhaseUITests" */;
 			buildPhases = (
+				87A9320F295ADC62005ECD90 /* Swiftlint */,
 				87A931F6295AD9FB005ECD90 /* Sources */,
 				87A931F7295AD9FB005ECD90 /* Frameworks */,
 				87A931F8295AD9FB005ECD90 /* Resources */,
@@ -252,6 +255,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87A9320D295ADAA1005ECD90 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhase_swiftlint.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhase_swiftlint_static_output",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./SwiftLint/swiftlint\n";
+		};
+		87A9320E295ADC57005ECD90 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhaseTests_swiftlint.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhaseTests_swiftlint_static_output",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./SwiftLint/swiftlint\n";
+		};
+		87A9320F295ADC62005ECD90 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhaseUITests_swiftlint.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/build/build_phases/SwiftlintBuildPhaseUITests_swiftlint_static_output",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87A931D6295AD9FA005ECD90 /* Sources */ = {
